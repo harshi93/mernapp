@@ -1,4 +1,4 @@
-var guid = require('guid'); 
+var guid = require('guid');
 var listeners = {};
 
 module.exports = {
@@ -8,8 +8,8 @@ module.exports = {
         return id;
     },
     dispatch:function(payload){
-        console.info("Dispatching....", payload);
-        for(var id in listeners){
+        console.info("Dispatching...",payload);
+        for (var id in listeners){
             var listener = listeners[id];
             listener(payload);
         }

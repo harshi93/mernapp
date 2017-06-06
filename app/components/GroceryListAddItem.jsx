@@ -1,32 +1,30 @@
-var React = require('react');
-var Addons = require('react-addons');
-var Actions = require('./../actions/GroceryItemActionCreator.jsx')
+var React = require('react/addons');
+var action = require('./../actions/GroceryItemActionCreator.jsx')
 
 module.exports = React.createClass({
-    getInitialState: function(){
+    getInitialState:function(){
         return {input:""};
     },
-
-    handleInputName: function(e){
-        this.setState({input: e.target.value});
+    handleInputName:function(e){
+        this.setState({input : e.target.value});
     },
-    
-    addItem: function(e){
+    addItem:function(e){
         e.preventDefault();
-        Actions.add({
+        //console.log("Adding item!",this.state.input);
+        action.add({
             name:this.state.input
         });
-
+        
         this.setState({
             input:''
         })
     },
     render:function(){
-        return(
-            <div className ='grocery-addItem'>
+        return (
+            <div className='grocery-addItem'>
                 <form onSubmit={this.addItem}>
-                    <input value={this.state.input} onChange={this.handleInputName}/>
-                    <button>Add Item</button>
+                    <input value={this.state.input} type='text' onChange={this.handleInputName}/>
+                    <button> Add Item </button>
                 </form>
             </div>
         )
