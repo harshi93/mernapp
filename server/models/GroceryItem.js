@@ -6,7 +6,6 @@ var GroceryItemSchema = {
     id:String
 };
 
-var GroceryItem = mongoose.model('GroceryItem', GroceryItemSchema, "groceryItems");
+var GroceryItem = mongoose.model('GroceryItem',GroceryItemSchema,"groceryItems");
 
-
-module.exports = GroceryItem
+module.exports = GroceryItem;
